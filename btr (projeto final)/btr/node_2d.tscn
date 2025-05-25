@@ -1,0 +1,353 @@
+[gd_scene load_steps=44 format=3 uid="uid://cgyuwuei8aalb"]
+
+[ext_resource type="Script" uid="uid://bn3d4vvgnmfhs" path="res://player_1.gd" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://dvw4an368v8de" path="res://Spristes/Ryu/hadouken.png" id="2_kdubu"]
+[ext_resource type="Texture2D" uid="uid://dgr0oc4e641d5" path="res://Spristes/Ryu/idle.png" id="3_d21ai"]
+[ext_resource type="Texture2D" uid="uid://blx643ko5onnh" path="res://Spristes/Ryu/jump.png" id="4_rj586"]
+[ext_resource type="Texture2D" uid="uid://fvmede2bvfc" path="res://Spristes/Ryu/shoryuken.png" id="5_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://cnsdk4rth0dpg" path="res://Spristes/Ryu/walking.png" id="6_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://cjh8qa8w5c0pl" path="res://Spristes/Backgrouds/postapocalypse2.png" id="7_d21ai"]
+[ext_resource type="Script" uid="uid://be0yk3ncqil54" path="res://Scripts/hadouken.gd" id="8_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://b01ajj3n75ca4" path="res://Spristes/Ryu/hadouken-ball.png" id="9_ir8iy"]
+[ext_resource type="FontFile" uid="uid://mfn0m1xftbej" path="res://Font/fightkid.ttf" id="10_ir8iy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0e48y"]
+radius = 56.0
+height = 274.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqns4"]
+radius = 66.0
+height = 298.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0ka3"]
+atlas = ExtResource("2_kdubu")
+region = Rect2(0, 0, 74, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
+atlas = ExtResource("2_kdubu")
+region = Rect2(74, 0, 74, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr8wp"]
+atlas = ExtResource("2_kdubu")
+region = Rect2(148, 0, 74, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2bti"]
+atlas = ExtResource("2_kdubu")
+region = Rect2(222, 0, 74, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta5nu"]
+atlas = ExtResource("3_d21ai")
+region = Rect2(0, 0, 45, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flf07"]
+atlas = ExtResource("3_d21ai")
+region = Rect2(45, 0, 45, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k73cj"]
+atlas = ExtResource("3_d21ai")
+region = Rect2(90, 0, 45, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjqkl"]
+atlas = ExtResource("3_d21ai")
+region = Rect2(135, 0, 45, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs4d3"]
+atlas = ExtResource("4_rj586")
+region = Rect2(0, 0, 38, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vxoj"]
+atlas = ExtResource("4_rj586")
+region = Rect2(38, 0, 38, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei405"]
+atlas = ExtResource("4_rj586")
+region = Rect2(76, 0, 38, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8dv2"]
+atlas = ExtResource("5_4d7sh")
+region = Rect2(0, 0, 58, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nhjh"]
+atlas = ExtResource("5_4d7sh")
+region = Rect2(58, 0, 58, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjha6"]
+atlas = ExtResource("5_4d7sh")
+region = Rect2(116, 0, 58, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt76g"]
+atlas = ExtResource("5_4d7sh")
+region = Rect2(174, 0, 58, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fr6y"]
+atlas = ExtResource("5_4d7sh")
+region = Rect2(232, 0, 58, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hxjc"]
+atlas = ExtResource("5_4d7sh")
+region = Rect2(290, 0, 58, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebxd8"]
+atlas = ExtResource("5_4d7sh")
+region = Rect2(348, 0, 58, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u7jv"]
+atlas = ExtResource("6_ir8iy")
+region = Rect2(0, 0, 45, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24dk6"]
+atlas = ExtResource("6_ir8iy")
+region = Rect2(45, 0, 45, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mryly"]
+atlas = ExtResource("6_ir8iy")
+region = Rect2(90, 0, 45, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq1c5"]
+atlas = ExtResource("6_ir8iy")
+region = Rect2(135, 0, 45, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ornx7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0ka3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h7mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr8wp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2bti")
+}],
+"loop": false,
+"name": &"Hadouken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta5nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flf07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k73cj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjqkl")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs4d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vxoj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei405")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8dv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nhjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjha6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt76g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fr6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hxjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebxd8")
+}],
+"loop": false,
+"name": &"Shoryuken",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u7jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24dk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mryly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq1c5")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqns4"]
+atlas = ExtResource("9_ir8iy")
+region = Rect2(258, 258, 258, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ornx7"]
+atlas = ExtResource("9_ir8iy")
+region = Rect2(0, 258, 258, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnnru"]
+atlas = ExtResource("9_ir8iy")
+region = Rect2(258, 0, 258, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_540hr"]
+atlas = ExtResource("9_ir8iy")
+region = Rect2(0, 0, 258, 258)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ip5v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqns4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ornx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnnru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnnru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_540hr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnnru")
+}],
+"loop": true,
+"name": &"Hadouken",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q5dlx"]
+radius = 79.3503
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqns4"]
+bg_color = Color(0.908592, 0.451629, 0.198743, 0.439216)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0ka3"]
+bg_color = Color(1, 0.00698161, 0.127058, 1)
+
+[node name="Cena_1" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = -141.0
+offset_top = -14.0
+offset_right = 1249.0
+offset_bottom = 687.0
+texture = ExtResource("7_d21ai")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Player 1" type="CharacterBody2D" parent="."]
+position = Vector2(153, 671)
+collision_layer = 0
+script = ExtResource("1_wtcfe")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player 1"]
+visible = false
+position = Vector2(36, -173)
+shape = SubResource("CapsuleShape2D_0e48y")
+
+[node name="Area2D" type="Area2D" parent="Player 1"]
+visible = false
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player 1/Area2D"]
+position = Vector2(35, -177)
+shape = SubResource("CapsuleShape2D_hqns4")
+debug_color = Color(0.715943, 0.588671, 0.110466, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player 1"]
+texture_filter = 1
+position = Vector2(40, -169)
+scale = Vector2(3.58889, 3.22917)
+sprite_frames = SubResource("SpriteFrames_ornx7")
+animation = &"Hadouken"
+autoplay = "Idle"
+
+[node name="Camera2D" type="Camera2D" parent="Player 1"]
+position = Vector2(423, -344)
+
+[node name="Hadouken" type="Area2D" parent="."]
+script = ExtResource("8_4d7sh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Hadouken"]
+position = Vector2(395, 447)
+scale = Vector2(0.618217, 0.52907)
+sprite_frames = SubResource("SpriteFrames_6ip5v")
+animation = &"Hadouken"
+frame = 2
+frame_progress = 0.30156
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hadouken/AnimatedSprite2D"]
+position = Vector2(12.9404, 1.89005)
+shape = SubResource("CircleShape2D_q5dlx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 55.0
+offset_top = 48.0
+offset_right = 498.0
+offset_bottom = 78.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hqns4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x0ka3")
+value = 80.0
+show_percentage = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+offset_left = 631.0
+offset_top = 52.0
+offset_right = 1074.0
+offset_bottom = 82.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hqns4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x0ka3")
+value = 80.0
+show_percentage = false
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="K_O" type="Label" parent="Hud"]
+offset_left = 486.0
+offset_top = 13.0
+offset_right = 649.0
+offset_bottom = 123.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_ir8iy")
+theme_override_font_sizes/font_size = 50
+text = "K.O"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="Hadouken" to="Hadouken" method="_on_area_entered"]

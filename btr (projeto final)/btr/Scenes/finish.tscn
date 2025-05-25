@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3f63ytq863uu"]
+
+[ext_resource type="Script" path="res://Scripts/finish.gd" id="1_li0s3"]
+[ext_resource type="Texture2D" uid="uid://csahxcjxw25ex" path="res://Spristes/menu.webp" id="1_mcjql"]
+[ext_resource type="FontFile" uid="uid://bhv2lfxphf7y4" path="res://Font/Lana Turner.ttf" id="2_eu1u8"]
+[ext_resource type="AudioStream" uid="uid://rbtx0jtr74jj" path="res://Som/807893__josefpres__piano-loops-069-efect-4-octave-long-loop-120-bpm.wav" id="3_1mgk4"]
+[ext_resource type="FontFile" uid="uid://b45gd5quxtr1r" path="res://Font/runescape_uf.ttf" id="3_lsvuy"]
+
+[sub_resource type="GDScript" id="GDScript_gfanu"]
+
+[node name="Finish" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_li0s3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(601.5, 351.5)
+scale = Vector2(2.64978, 2.51071)
+texture = ExtResource("1_mcjql")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 210.0
+offset_right = 980.0
+offset_bottom = 370.0
+theme_override_colors/font_shadow_color = Color(0.0745098, 0.0509804, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_eu1u8")
+theme_override_font_sizes/font_size = 150
+text = " FINISH!!"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 451.0
+offset_right = 690.0
+offset_bottom = 514.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_lsvuy")
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1mgk4")
+autoplay = true
+script = SubResource("GDScript_gfanu")
+
+[connection signal="pressed" from="Exit" to="." method="_on_button_pressed"]

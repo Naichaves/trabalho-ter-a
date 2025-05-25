@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://cd4qevatybehr"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_onmri"]
+[ext_resource type="Texture2D" uid="uid://csahxcjxw25ex" path="res://Spristes/menu.webp" id="2_rc3y5"]
+[ext_resource type="FontFile" uid="uid://b45gd5quxtr1r" path="res://Font/runescape_uf.ttf" id="3_v5a5t"]
+[ext_resource type="FontFile" uid="uid://bhv2lfxphf7y4" path="res://Font/Lana Turner.ttf" id="4_l4yxh"]
+[ext_resource type="AudioStream" uid="uid://rbtx0jtr74jj" path="res://Som/807893__josefpres__piano-loops-069-efect-4-octave-long-loop-120-bpm.wav" id="5_pc7qc"]
+
+[sub_resource type="GDScript" id="GDScript_b7d7b"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_onmri")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(601.5, 351.5)
+scale = Vector2(2.64978, 2.51071)
+texture = ExtResource("2_rc3y5")
+metadata/_edit_lock_ = true
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 443.0
+offset_right = 705.0
+offset_bottom = 516.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_v5a5t")
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 111.0
+offset_right = 943.0
+offset_bottom = 271.0
+theme_override_colors/font_shadow_color = Color(0.0745098, 0.0509804, 0.972549, 1)
+theme_override_fonts/font = ExtResource("4_l4yxh")
+theme_override_font_sizes/font_size = 150
+text = " Batalha"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 238.0
+offset_right = 783.0
+offset_bottom = 398.0
+theme_override_colors/font_shadow_color = Color(0.0745098, 0.0509804, 0.972549, 1)
+theme_override_fonts/font = ExtResource("4_l4yxh")
+theme_override_font_sizes/font_size = 150
+text = "REAL"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_pc7qc")
+autoplay = true
+script = SubResource("GDScript_b7d7b")
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
